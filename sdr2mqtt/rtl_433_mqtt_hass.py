@@ -589,6 +589,7 @@ def mqtt_message(client, userdata, msg):
     try:
         # Decode JSON payload
         data = json.loads(msg.payload.decode())
+        data['id'] = '100'
         logging.debug("Received Device Data from SDR and sent to MQTT: {} : {}".format(msg.topic, json.dumps(data)))
         bridge_event_to_hass(client, msg.topic, data)
 
