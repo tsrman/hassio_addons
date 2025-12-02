@@ -659,7 +659,7 @@ def bridge_event_to_hass(mqttc, topic, data):
     model = sanitize(data["model"])
 
     if "id" in data:
-        instance = 100
+        instance = '100'
     else:
         instance = 0
         
